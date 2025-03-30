@@ -1,32 +1,70 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+int main () {
 
-int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+printf("***Bem-vindo ao jogo xadrez!***\n");
+printf("\n");
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+/*Direções
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+printf("Cima\n");
+printf("Baixo\n");
+printf("Esquerda\n");
+printf("Direita\n");
+printf("Cima Esquerda\n");
+printf("Cima Direita\n");
+*/
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+int torre;
+int bispo;
+int rainha;
+int i = 0;
+int mover;
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+printf("Escolha a peça que deseja mover:\n");
+printf("1. Torre\n");
+printf("2. Bispo\n");
+printf("3. Rainha\n");
+scanf("%d", &mover);
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+switch (mover)
+{
+case 1:
+    //torre - Move-se em linha reta horizontalmente ou verticalmente. Seu programa deverá simular o movimento da Torre cinco casas para a direita.
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+    for (i = 0; i <= 5; i++)
+    {
+    printf("Torre move-se %d casas para direita.\n", i);
+    } 
+    break;
 
-    return 0;
+case 2:
+    //bispo - Move-se na diagonal. Seu programa deverá simular o movimento do Bispo cinco casas na diagonal para cima e à direita. Para representar a diagonal, você imprimirá a combinação de duas direções a cada casa (ex: "Cima, Direita").
+     
+    while (i <= 5)
+    {
+        printf("Bispo move-se %d casas para diagonal. Cima, Direita!\n", i);
+        i++;
+    }
+    break;
+
+case 3:
+    //rainha - Move-se em todas as direções. Seu programa deverá simular o movimento da Rainha oito casas para a esquerda.
+ 
+    do
+    {
+        printf("Rainha: move-se %d casas para esquerda!\n", i);
+        i++;
+    } while (i <= 8);
+    break;
+
+
+default:
+    break;
+}
+
+
+return 0;
+
+
 }
